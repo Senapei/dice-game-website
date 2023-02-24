@@ -9,6 +9,8 @@ body {
   background-color: rgb(51, 56, 70);
   display: flex;
   flex-direction: column;
+
+  color: rgb(83, 122, 83);
 }
 
 h3 {
@@ -35,6 +37,8 @@ img {
 .heading {
   font-size: 150px;
   margin: 35px 0 100px;
+  text-shadow: 10px 0 #000;
+  font-family: "Lobster", cursive;
 }
 
 .players-container {
@@ -44,6 +48,8 @@ img {
   align-items: flex-start;
   gap: 80px;
   flex: 1;
+  font-family: "Gajraj One", cursive;
+  font-size: 22px;
 }
 
 .footer-container {
