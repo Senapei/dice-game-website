@@ -5,36 +5,29 @@ function randomNumber() {
   return randomNumber;
 }
 
-function setDiceImage() {
+function setDiceImage(diceNumber1, diceNumber2) {
   let dice1 = document.querySelector(".dice-1");
   let dice2 = document.querySelector(".dice-2");
 
-  let diceValue1 = randomNumber();
-  dice1.setAttribute("src", "./img/dice" + diceValue1 + ".png");
+  dice1.setAttribute("src", "./img/dice" + diceNumber1 + ".png");
 
-  let diceValue2 = randomNumber();
-  dice2.setAttribute("src", "./img/dice" + diceValue2 + ".png");
-
-  if (diceValue1 > diceValue2) {
-    return 0;
-  } else if (diceValue1 < diceValue2) {
-    return 1;
-  } else if (diceValue1 === diceValue2) {
-    return 2;
-  } else {
-    console.log("error");
-  }
+  dice2.setAttribute("src", "./img/dice" + diceNumber2 + ".png");
 }
 
 function winner() {
-  let diceWinner = setDiceImage();
+  let firstNumber = randomNumber();
+  let secondNumber = randomNumber();
+
+  setDiceImage(firstNumber, secondNumber);
   let heading = document.querySelector(".heading");
-  if (diceWinner === 0) {
+  if (firstNumber > secondNumber) {
     heading.textContent = "Player 1 Wins";
-  } else if (diceWinner === 1) {
+  } else if (firstNumber < secondNumber) {
     heading.textContent = "Player 2 Wins";
-  } else if (diceWinner === 2) {
+  } else if (firstNumber === secondNumber) {
     heading.textContent = "It's a Draw";
+  } else {
+    console.log("Error");
   }
 }
 
